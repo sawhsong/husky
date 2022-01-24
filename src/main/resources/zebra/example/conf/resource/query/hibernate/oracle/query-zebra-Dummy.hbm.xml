@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<sql-query name="query.zebra.Dummy.getTableListDataSetByCriteria">
+	<![CDATA[
+		select table_name,
+		       comments
+		  from user_tab_comments
+		 where table_type = 'TABLE'
+		   ${auto_fill}
+		 order by table_name
+	]]>
+	</sql-query>
+
+	<sql-query name="query.zebra.Dummy.getTableNameDataSetByTableName">
+	<![CDATA[
+		select table_name
+		  from user_tables
+		 where 1 = 1
+		   ${auto_fill}
+		 order by table_name
+	]]>
+	</sql-query>
+
+	<sql-query name="query.zebra.Dummy.getTableListDataSetByCriteriaForAdditionalDataSource">
+	<![CDATA[
+		select table_name as TABLE_NAME,
+		       table_comment as COMMENTS
+		  from (select a.table_name,
+		               a.table_comment
+		          from information_schema.tables a
+		         where a.table_schema = 'hkaccount'
+		           and a.table_type = 'BASE TABLE'
+		           and a.table_name not like 'e5zg0_%'
+		           and a.table_name not like 'zo7dp_%'
+		           and a.table_name not like 'tax_2017%'
+		           and a.table_name not in ('asset_sub_type', 'bank', 'bank_balance', 'cashflow', 'cashflow_quarter', 'client', 'income_main_type', 'income_sub_type',
+		                                    'lending_sub_type', 'other_sub_type', 'payment_sub_type', 'personal_living', 'quarter_type', 'tax2', 'template_other_type'
+		                                   )
+		        union
+		        select a.table_name,
+		               a.table_comment
+		          from information_schema.tables a
+		         where a.table_schema = 'hkaccount'
+		           and a.table_type = 'BASE TABLE'
+		           and a.table_name = 'e5zg0_users'
+		       ) a
+		 where 1 = 1
+		   ${auto_fill}
+		 order by a.table_name
+	]]>
+	</sql-query>
+
+	<sql-query name="query.zebra.Dummy.getTableDetailDataSetByTableName">
+	<![CDATA[
+		select a.table_name,
+		       a.column_name,
+		       a.data_type,
+		       a.data_default,
+		       decode(a.data_type, 'NUMBER', decode(a.data_precision || ',' || a.data_scale, ',', '', nvl(a.data_precision, 12) || ',' || a.data_scale), a.data_length) data_length,
+		       a.nullable,
+		       c.constraint_type,
+		       d.comments,
+		       (select comments
+		          from user_tab_comments
+		         where table_name = '${table_name}'
+		       ) table_description
+		  from user_tab_columns a,
+		       (select a.table_name,
+		               b.column_name,
+		               listagg(decode(a.constraint_type, 'P', 'PK', 'R', 'FK', 'U', 'UK'), ', ') within group(order by a.constraint_type) as constraint_type
+		          from user_constraints a,
+		               user_cons_columns b
+		         where a.constraint_type in ('P', 'R', 'U')
+		           and a.table_name = b.table_name
+		           and a.constraint_name = b.constraint_name
+		         group by a.table_name, b.column_name
+		       ) c,
+		       user_col_comments d
+		 where a.table_name = upper('${table_name}')
+		   and a.table_name = c.table_name (+)
+		   and a.column_name = c.column_name (+)
+		   and a.table_name = d.table_name (+)
+		   and a.column_name = d.column_name (+)
+		 order by a.table_name,
+		       a.nullable,
+		       c.constraint_type,
+		       a.column_name
+	]]>
+	</sql-query>
+
+	<sql-query name="query.zebra.Dummy.getTableDetailDataSetByTableNameForAdditionalDataSource">
+	<![CDATA[
+		select a.table_name as TABLE_NAME,
+		       a.column_name as COLUMN_NAME,
+		       a.data_type as DATA_TYPE,
+		       a.column_default as DATA_DEFAULT,
+		       a.column_type as DATA_LENGTH,
+		       a.is_nullable as NULLABLE,
+		       a.column_key as CONSTRAINT_TYPE,
+		       a.column_comment as COMMENTS,
+		       (select table_comment
+		          from information_schema.tables
+		         where table_schema = 'hkaccount'
+		           and table_name = a.table_name
+		       ) as TABLE_DESCRIPTION
+		  from information_schema.columns a
+		 where a.table_schema = 'hkaccount'
+		   and upper(a.table_name) = upper('${table_name}')
+		 order by a.table_name
+	]]>
+	</sql-query>
+
+	<sql-query name="query.zebra.Dummy.getTotalRowCountByTableName">
+	<![CDATA[
+		select count(*)
+		  from ${table_name}
+	]]>
+	</sql-query>
+
+	<sql-query name="query.zebra.Dummy.getTotalRowCountByTableNameForAdditionalDataSource">
+	<![CDATA[
+		select count(*)
+		  from ${table_name}
+	]]>
+	</sql-query>
+</hibernate-mapping>
