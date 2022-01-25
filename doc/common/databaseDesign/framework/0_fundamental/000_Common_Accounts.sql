@@ -24,11 +24,11 @@ grant unlimited tablespace to husky;
 alter database datafile 'C:\oraclexe\app\oracle\oradata\xe\system.DBF' autoextend on next 1M maxsize unlimited;
 
 -- husky
-create tablespace hkaccount_idx datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_IDX.DBF' size 1m extent management local segment space management auto;
-create tablespace hkaccount_data datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_DATA.DBF' size 1m extent management local segment space management auto;
+create tablespace hkaccount_idx datafile 'C:\oraclexe\app\oracle\oradata\Husky\Husky_IDX.DBF' size 1m extent management local segment space management auto;
+create tablespace hkaccount_data datafile 'C:\oraclexe\app\oracle\oradata\Husky\Husky_DATA.DBF' size 1m extent management local segment space management auto;
 
-alter database datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_IDX.DBF' autoextend on;
-alter database datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_DATA.DBF' autoextend on;
+alter database datafile 'C:\oraclexe\app\oracle\oradata\Husky\Husky_IDX.DBF' autoextend on;
+alter database datafile 'C:\oraclexe\app\oracle\oradata\Husky\Husky_DATA.DBF' autoextend on;
 
 /**
  * To turn off oracle password expiration
