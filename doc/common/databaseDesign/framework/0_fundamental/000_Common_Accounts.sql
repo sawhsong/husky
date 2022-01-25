@@ -1,33 +1,21 @@
 /**
  * User
  */
--- hkaccount
-drop user hkaccount cascade;
+-- husky
+drop user husky cascade;
 
-create user hkaccount identified by hkaccount20170523;
-grant connect, resource to hkaccount;
-grant create synonym, create view, create database link, create public synonym, drop public synonym to hkaccount;
+create user husky identified by husky;
+grant connect, resource to husky;
+grant create synonym, create view, create database link, create public synonym, drop public synonym to husky;
 
 /*
  * Oracle cloud autonomous database
  */
-create user hkaccount identified by hkAccntPass20210620; -- Oracle cloud autonumous db
-grant connect, resource to hkaccount;
-grant create synonym, create view, create database link, create public synonym, drop public synonym to hkaccount;
-grant unlimited tablespace to hkaccount;
+create user husky identified by husky; -- Oracle cloud autonumous db
+grant connect, resource to husky;
+grant create synonym, create view, create database link, create public synonym, drop public synonym to husky;
+grant unlimited tablespace to husky;
 
-
-
-/**
- * Create DB Link
- * 	Login as alpaca
- */
---drop database link hkaccount_aws;
---create database link hkaccount_aws connect to hkaccount identified by hkaccount20170523 using '52.65.204.139:1521/xe';
-
---drop database link perci;
---create database link perci connect to PERCI_0829 identified by welcome1 using '10.14.35.41:1521/TEST';
---create database link perci connect to PERCI identified by WELCOME1 using 'entipx-ora2:1521/PROD';
 
 /**
  * Table space(Index, Data)
@@ -35,12 +23,12 @@ grant unlimited tablespace to hkaccount;
 -- system
 alter database datafile 'C:\oraclexe\app\oracle\oradata\xe\system.DBF' autoextend on next 1M maxsize unlimited;
 
--- hkaccount
-create tablespace hkaccount_idx datafile 'C:\oraclexe\app\oracle\oradata\HKAccount\HKAccount_IDX.DBF' size 1m extent management local segment space management auto;
-create tablespace hkaccount_data datafile 'C:\oraclexe\app\oracle\oradata\HKAccount\HKAccount_DATA.DBF' size 1m extent management local segment space management auto;
+-- husky
+create tablespace hkaccount_idx datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_IDX.DBF' size 1m extent management local segment space management auto;
+create tablespace hkaccount_data datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_DATA.DBF' size 1m extent management local segment space management auto;
 
-alter database datafile 'C:\oraclexe\app\oracle\oradata\HKAccount\HKAccount_IDX.DBF' autoextend on;
-alter database datafile 'C:\oraclexe\app\oracle\oradata\HKAccount\HKAccount_DATA.DBF' autoextend on;
+alter database datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_IDX.DBF' autoextend on;
+alter database datafile 'C:\oraclexe\app\oracle\oradata\husky\Husky_DATA.DBF' autoextend on;
 
 /**
  * To turn off oracle password expiration
