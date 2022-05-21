@@ -25,6 +25,8 @@ create table zebra_board_file (
 )
 pctfree 20 pctused 80 tablespace hkaccount_data storage(initial 100k next 100k maxextents 2000 pctincrease 0);
 
+create sequence zebra_board_file_s minvalue 1 maxvalue 999999999999999999999999999 increment by 1 start with 1 nocache noorder nocycle;
+
 comment on table  zebra_board_file                    is '게시판 첨부파일';
 comment on column zebra_board_file.file_id            is '파일 unique id';
 comment on column zebra_board_file.article_id         is '게시물 unique id';
@@ -38,10 +40,6 @@ comment on column zebra_board_file.insert_user_id     is '입력자 uid';
 comment on column zebra_board_file.insert_date        is '입력일자';
 comment on column zebra_board_file.update_user_id     is '수정자 uid';
 comment on column zebra_board_file.update_date        is '수정일자';
-
---alter table zebra_board_file add(constraint fk_zebra_board_file foreign key(article_uid) references zebra_board(article_uid));
---create index idx_zebra_board_file on zebra_board_file(file_uid) tablespace hkaccount_idx storage(initial 3m next 3m maxextents 2000 pctincrease 0);
-
 
 /**
  * Table Name  : 게시판 첨부파일 정보

@@ -11,7 +11,7 @@ grant create synonym, create view, create database link, create public synonym, 
 /*
  * Oracle cloud autonomous database
  */
-create user husky identified by husky; -- Oracle cloud autonumous db
+create user husky identified by DBPass_20220522; -- Oracle cloud autonumous db
 grant connect, resource to husky;
 grant create synonym, create view, create database link, create public synonym, drop public synonym to husky;
 grant unlimited tablespace to husky;
