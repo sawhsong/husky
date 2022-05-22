@@ -28,7 +28,7 @@ public class AppLoader extends HttpServlet {
 	 */
 	private void executeWorks() throws Exception {
 		// Project
-		MenuManager.loadMenu();
-		CommonCodeManager.loadCommonCode();
+//		MenuManager.loadMenu();
+//		CommonCodeManager.loadCommonCode();
 	}
 }
