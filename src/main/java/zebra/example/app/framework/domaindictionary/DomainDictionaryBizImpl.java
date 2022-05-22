@@ -100,8 +100,6 @@ public class DomainDictionaryBizImpl extends BaseBiz implements DomainDictionary
 
 		try {
 			zebraDomainDictionary = zebraDomainDictionaryDao.getDomainDictionaryById(requestDataSet.getValue("domainId"));
-			zebraDomainDictionary.setInsertUserName(ZebraDataHelper.getUserNameById(zebraDomainDictionary.getInsertUserId()));
-			zebraDomainDictionary.setUpdateUserName(ZebraDataHelper.getUserNameById(zebraDomainDictionary.getUpdateUserId()));
 
 			paramEntity.setObject("zebraDomainDictionary", zebraDomainDictionary);
 			paramEntity.setSuccess(true);

@@ -12,8 +12,8 @@
 		<property name="directoryNames">
 			<list>
 				<!-- Message Files Begin -->
-				<value>classpath:${path.dir.messageFwk}</value>
-				<value>classpath:${path.dir.messageProject}</value>
+<!-- 				<value>classpath:${path.dir.messageFwk}</value> -->
+<!-- 				<value>classpath:${path.dir.messageProject}</value> -->
 				<!-- Message Files End -->
 
 				<!-- Hibernate Query Files Begin -->

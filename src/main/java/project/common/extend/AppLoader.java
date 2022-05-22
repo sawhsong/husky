@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import project.common.module.commoncode.CommonCodeManager;
-import project.common.module.menu.MenuManager;
-
 public class AppLoader extends HttpServlet {
 	private Logger logger = LogManager.getLogger(this.getClass());
 

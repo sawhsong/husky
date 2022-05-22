@@ -16,6 +16,5 @@
 
 	<!--/* DataHelper */-->
 	<bean id="zebraDataHelper" name="zebraDataHelper" class="${name.package.framework}.example.common.module.datahelper.ZebraDataHelper" parent="baseBiz">
-		<property name="sysUserDao" ref="sysUserDao"/>
 	</bean>
 </beans>

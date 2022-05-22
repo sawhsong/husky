@@ -4,12 +4,4 @@
     <include file="project/conf/struts/struts-project-common-module.xml"/>
     <include file="project/conf/struts/struts-project-app-index.xml"/>
     <include file="project/conf/struts/struts-project-app-login.xml"/>
-    <include file="project/conf/struts/struts-project-app-sys.xml"/>
-    <include file="project/conf/struts/struts-project-app-bau.xml"/>
-    <include file="project/conf/struts/struts-project-app-bsm.xml"/>
-    <include file="project/conf/struts/struts-project-app-ads.xml"/>
-    <include file="project/conf/struts/struts-project-app-rpu.xml"/>
-    <include file="project/conf/struts/struts-project-app-rpa.xml"/>
-    <include file="project/conf/struts/struts-project-app-pro.xml"/>
-    <include file="project/conf/struts/struts-project-app-cce.xml"/>
 </struts>
