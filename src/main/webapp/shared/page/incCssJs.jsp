@@ -100,10 +100,9 @@ jsconfig.put("bootstrap", "<mc:cp key="bootstrap"/>");
 /*!
  * jQuery UI
  */
-jsconfig.put("useScrollablePanel", true);
+jsconfig.put("useScrollablePanel", false);
 jsconfig.put("useJqTooltip", false);
 jsconfig.put("useJqSelectmenu", true);
-jsconfig.put("useJqButton", true);
 /*!
  * etc
  */

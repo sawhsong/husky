@@ -10,12 +10,6 @@
 @import url("./header.css");
 @import url("./contextMenu.css");
 @import url("./popup.css");
-@import url("./footer.css");
-@import url("./bodyLeft.css");
-@import url("./bodyCenter.css");
-@import url("./bodyRight.css");
-@import url("./bodyLocationPathArea.css");
-@import url("./bodyAdminToolArea.css");
 @import url("./tabs.css");
 @import url("./buttons.css");
 @import url("./tables.css");
@@ -29,46 +23,17 @@
 
 /**
  * Elements common
+ *	Calibri, Trebuchet MS, Lucida Grande
  */
 * {margin:0px 0px;padding:0px 0px;}
 body {padding:0px 0px;
 	color:#000000;
-	font:normal normal normal 11px/1.2 "Verdana", "Malgun Gothic", "Sans-serif";
+	font:normal normal normal 13px/1.6 "Verdana", "Malgun Gothic", "Sans-serif";
 }
 
 /**
  * Basic Layout
  */
-#divHeaderHolder {overflow:hidden;clear:both;}
-#divBodyHolder {overflow:hidden;clear:both;}
-#divFooterHolder {overflow:hidden;clear:both;}
-
-/**
- * jQuery-Layout component
- */
-.layoutTogglers-north-open, .layoutTogglers-south-closed {background:url("/shared/resource/image/theme/theme000/common/togglerUp.gif") no-repeat scroll center bottom transparent;}
-.layoutTogglers-north-closed, .layoutTogglers-south-open {background:url("/shared/resource/image/theme/theme000/common/togglerDown.gif") no-repeat scroll center bottom transparent;}
-.layoutTogglers-west-open, .layoutTogglers-east-closed {background:url("/shared/resource/image/theme/theme000/common/togglerLeft.gif") no-repeat scroll center bottom transparent;}
-.layoutTogglers-west-closed, .layoutTogglers-east-open {background:url("/shared/resource/image/theme/theme000/common/togglerRight.gif") no-repeat scroll center bottom transparent;}
-.northLayoutResizers {transition:background 0.2s;
-	background-color:#191919;
-}
-.northLayoutResizers:hover {
-	background-color:#191919;
-}
-.southLayoutResizers {transition:background 0.2s;
-	background-color:#E4E4E4;
-}
-.southLayoutResizers:hover {
-	background-color:#D2D2D2;
-}
-.layoutResizers {transition:background 0.2s;
-	background-color:#E4E4E4;
-}
-.layoutResizers:hover {
-	background-color:#D2D2D2;
-}
-.ui-layout-center {overflow:auto;}
 
 /**
  * Global attributes - ETC
