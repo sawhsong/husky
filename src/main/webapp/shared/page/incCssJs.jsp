@@ -54,6 +54,10 @@
 
 <script type="text/javascript">
 /*!
+ * layout
+ */
+jsconfig.put("noWest", true);
+/*!
  * session attributes
  */
 jsconfig.put("frameworkName", "${sessionScope.frameworkName}");

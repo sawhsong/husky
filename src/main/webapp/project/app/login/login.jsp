@@ -86,57 +86,6 @@ body {background:#FFFFFF;}
 		</div>
 	</div>
 </div>
-<!--
-<div id="divDescriptionArea" class="loginDescriptionArea">
-	<div class="panel panel-default loginDescription">
-		<div class="panel-heading">
-			<h3 class="panel-title loginDescriptionTitle"><mc:msg key="login.message.descHeader"/></h3>
-		</div>
-		<div class="panel-body descContents">
-			<table class="tblDefault withPadding" style="width:100%;">
-				<colgroup>
-					<col width="100%"/>
-				</colgroup>
-				<tr>
-					<td class="tdDefault"><mc:msg key="login.message.description"/></td>
-				</tr>
-			</table>
-			<div class="verGap10"></div>
-			<table class="tblDefault withPadding" style="width:100%;">
-				<colgroup>
-					<col width="20%"/>
-					<col width="*"/>
-				</colgroup>
-				<tr>
-					<th class="thDefault"><mc:msg key="login.header.accountant"/></th>
-					<td class="tdDefault"><mc:msg key="login.header.accountantName"/></td>
-				</tr>
-				<tr>
-					<th class="thDefault"><mc:msg key="login.header.email"/></th>
-					<td class="tdDefault"><mc:msg key="login.header.emailValue"/></td>
-				</tr>
-				<tr>
-					<th class="thDefault"><mc:msg key="login.header.tel"/></th>
-					<td class="tdDefault"><mc:msg key="login.header.telValue"/></td>
-				</tr>
-				<tr>
-					<th class="thDefault"><mc:msg key="login.header.fax"/></th>
-					<td class="tdDefault"><mc:msg key="login.header.faxValue"/></td>
-				</tr>
-			</table>
-			<div class="verGap10"></div>
-			<table class="tblDefault withPadding" style="width:100%;">
-				<colgroup>
-					<col width="100%"/>
-				</colgroup>
-				<tr>
-					<td class="tdDefault"><mc:msg key="I990"/></td>
-				</tr>
-			</table>
-		</div>
-	</div>
-</div>
--->
 </form>
 </body>
 </html>
