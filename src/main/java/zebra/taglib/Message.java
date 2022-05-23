@@ -26,9 +26,11 @@ public class Message extends TaglibSupport {
 			String defaultLangCode = CommonUtil.nvl(getLangCode(), (String)httpSession.getAttribute("langCode"));
 			DataSet ds = MessageManager.getMessageDataSet(defaultLangCode);
 
-			rtnString = ds.getValue(getKey());
+			if (ds != null) {
+				rtnString = ds.getValue(getKey());
+			}
 
-			if (CommonUtil.isEmpty(rtnString) && CommonUtil.isNotEmpty(getDefaultMsg())) {
+			if (CommonUtil.isBlank(rtnString) && CommonUtil.isNotBlank(getDefaultMsg())) {
 				rtnString = getDefaultMsg();
 			}
 

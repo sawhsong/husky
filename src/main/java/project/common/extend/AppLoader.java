@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import project.common.module.commoncode.CommonCodeManager;
+
 public class AppLoader extends HttpServlet {
 	private Logger logger = LogManager.getLogger(this.getClass());
 
@@ -26,6 +28,6 @@ public class AppLoader extends HttpServlet {
 	private void executeWorks() throws Exception {
 		// Project
 //		MenuManager.loadMenu();
-//		CommonCodeManager.loadCommonCode();
+		CommonCodeManager.loadCommonCode();
 	}
 }

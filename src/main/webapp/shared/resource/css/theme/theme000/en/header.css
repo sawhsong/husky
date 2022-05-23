@@ -46,9 +46,9 @@
 	font-size:0.8em;
 	background:url('/shared/resource/image/icon/logo-gear_Black.png') no-repeat 0% 50%;
 }
-#aLogo {padding:6px 0px 8px 160px;
-	background:url('/shared/resource/image/icon/logoHKAccount.png') no-repeat 0% 0%;
-	background-size:134px 28px;
+#aLogo {padding:12px 0px 12px 40px;
+	background:url('/shared/resource/image/icon/logoHusky.png') no-repeat 0% 50%;
+	background-size:33px 37px;
 }
 
 /**

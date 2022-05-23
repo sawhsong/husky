@@ -8,8 +8,6 @@ package project.app.login;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import project.common.extend.BaseAction;
-import zebra.config.MemoryBean;
-import zebra.util.CommonUtil;
 
 public class LoginAction extends BaseAction {
 	@Autowired
