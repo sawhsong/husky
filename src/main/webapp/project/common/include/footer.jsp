@@ -10,7 +10,6 @@
 				<col width="100%"/>
 			</colgroup>
 			<tr>
-<!-- 				<td class="tdDefaultCt">PERCI / Entity Solutions</td> -->
 				<td class="tdDefaultCt">&copy; Copyright <%=CommonUtil.getSysdate("yyyy")%>, Dustin Sa</td>
 			</tr>
 		</table>

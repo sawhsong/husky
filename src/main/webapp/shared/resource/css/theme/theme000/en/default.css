@@ -35,6 +35,9 @@ body {padding:0px 0px;
 /**
  * Basic Layout
  */
+#divHeaderHolder {}
+#divBodyHolder {}
+#divFooterHolder {}
 
 /**
  * Global attributes - ETC

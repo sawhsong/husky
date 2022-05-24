@@ -31,6 +31,9 @@ $(function() {
 		</div>
 		<div id="divGlobalMenuRight">
 			<div id="divGblMenuArea">
+				<div id="divFrameworkMenu" class="headerGblMenus">
+					<a id="aFrameworkMenu">Framework Menu</a>
+				</div>
 			</div>
 		</div>
 	</div>
